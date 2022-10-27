@@ -1,13 +1,13 @@
+%p
+  = "reloadni stranku pri prvnim nacteni !!!"
 %h1{style:"text-align:center"}
   = "Sejf souboru"
 %hr
-#instances
+#instances.flex 
   - @instances.each do |instance|
-    .div
-      - if instance.files.previewable?
-        = instance.files.preview(reisze_to_fit: [200, 200]) 
+    .div{style:"margin: 10px; padding: 10px; border: 1px solid black; border-radius: 10px; text-align: center; background-color: #f2f2f2;"}
       = link_to instance.files.filename, rails_blob_path(instance.files, disposition: "attachment")
-      %br
+      = button_to "Smazat", instance, method: :delete, class: "btn btn-danger"
 %br
 %form.dropzone#myId{:action => "/target"}
 %br

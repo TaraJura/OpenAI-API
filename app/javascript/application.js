@@ -4,4 +4,3 @@ import "controllers"
 
 
 let myDropzone = new Dropzone("form#myId", { url: "/instances/file"});
-setTimeout(function () { location.reload(true); }, 3000);
