@@ -4,7 +4,7 @@ class InstancesController < ApplicationController
 
   # GET /instances or /instances.json
   def index
-    @instances = Instance.all
+    @instances = Instance.where(user_id: current_user.id)
   end
 
   # GET /instances/1 or /instances/1.json
@@ -14,6 +14,7 @@ class InstancesController < ApplicationController
   def file
     #create new instance with attached file
     @instance = Instance.new()
+    @instance.user_id = current_user.id
     @instance.files.attach(params[:file])
     @instance.save
   end
