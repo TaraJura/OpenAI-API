@@ -1,5 +1,6 @@
-%h1
+%h1{style:"text-align:center"}
   = "Sejf souboru"
+%hr
 #instances
   - @instances.each do |instance|
     .div
@@ -7,4 +8,8 @@
         = instance.files.preview(reisze_to_fit: [200, 200]) 
       = link_to instance.files.filename, rails_blob_path(instance.files, disposition: "attachment")
       %br
+%br
 %form.dropzone#myId{:action => "/target"}
+%br
+%br
+%br
