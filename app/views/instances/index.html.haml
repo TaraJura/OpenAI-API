@@ -1,5 +1,5 @@
 %p
-  = "reloadni stranku pri prvnim nacteni !!!"
+  = "reloadni stranku pri prvnim nacteni !!! (pokud nevidis field pro upload)"
 %h1{style:"text-align:center"}
   = "Sejf souboru"
 %hr
@@ -10,6 +10,8 @@
       = button_to "Smazat", instance, method: :delete, class: "btn btn-danger"
 %br
 %form.dropzone#myId{:action => "/target"}
+/ button to relod page
+%button{type: "button", onclick: "location.reload();", style: "margin: 10px; padding: 10px; border: 1px solid black; border-radius: 10px; text-align: center; background-color: #f2f2f2;"} Reloadni stranku
 %br
 %br
 %br
