@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @instance %>
+
+<div>
+  <%= link_to "Edit this instance", edit_instance_path(@instance) %> |
+  <%= link_to "Back to instances", instances_path %>
+
+  <%= button_to "Destroy this instance", @instance, method: :delete %>
+</div>

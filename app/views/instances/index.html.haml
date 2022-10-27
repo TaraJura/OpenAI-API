@@ -1,0 +1,10 @@
+%h1
+  = "Sejf souboru"
+#instances
+  - @instances.each do |instance|
+    .div
+      - if instance.files.previewable?
+        = instance.files.preview(reisze_to_fit: [200, 200]) 
+      = link_to instance.files.filename, rails_blob_path(instance.files, disposition: "attachment")
+      %br
+%form.dropzone#myId{:action => "/target"}
