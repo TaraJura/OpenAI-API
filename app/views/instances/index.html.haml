@@ -7,7 +7,7 @@
   - @instances.each do |instance|
     .div{style:"margin: 10px; padding: 10px; border: 1px solid black; border-radius: 10px; text-align: center; background-color: #f2f2f2;"}
       = link_to instance.files.filename, rails_blob_path(instance.files, disposition: "attachment")
-      = button_to "Smazat", instance, method: :delete, class: "btn btn-danger"
+      = button_to "Smazat", instance, method: :delete, class: "btn btn-danger", data: { turbo: false }
 %br
 %form.dropzone#myId{:action => "/target"}
 / button to relod page
