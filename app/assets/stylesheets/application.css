@@ -14,8 +14,28 @@
  *= require_self
  */
 
-.flex { 
-    display: flex;
-    flex-wrap: wrap;
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
+.email {
+  right: 10px;
+  top: 0;
+  position: absolute;
+}
+
+.alert {
+  color: red;
+  text-align: center;
+}
+
+.notice {
+  color: green;
+  text-align: center;
+}
+
+.right {
+  float: right;
+}
