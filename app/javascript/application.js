@@ -2,5 +2,3 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-
-let myDropzone = new Dropzone("form#myId", { url: "/instances/file"});
