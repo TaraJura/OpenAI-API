@@ -2,6 +2,5 @@
 
 class StatsController < ApplicationController
   def index
-    @request = Riot.new.free_champions
   end
 end

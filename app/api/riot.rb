@@ -2,12 +2,24 @@
 
 class Riot
   def initialize
-    @url = 'https://euw1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=RGAPI-f527bb99-1013-4a25-b357-f9e7c7e71889'
+    @api_key = '?api_key=RGAPI-eaeb144d-9f90-4471-b50b-8725702f09fa'
+    @url = 'https://na1.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=' + @api_key
   end
 
   def free_champions
     @request = Typhoeus::Request.new(
       @url,
+      method: :get,
+      body: {},
+      params: {},
+      headers: {}
+    ).run
+  end
+
+  def account(name)
+    url = 'https://eun1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + name + @api_key
+    @request = Typhoeus::Request.new(
+      url,
       method: :get,
       body: {},
       params: {},
