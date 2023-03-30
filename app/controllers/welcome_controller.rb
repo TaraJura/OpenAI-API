@@ -2,6 +2,7 @@
 
 class WelcomeController < ApplicationController
   def index
-    @accounts = Accounts.new
+    @questions = Question.all.order(created_at: :desc)
+    @question = Question.new
   end
 end
